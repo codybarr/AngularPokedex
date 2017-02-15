@@ -38,3 +38,8 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+
+#Large Files / Sprites/etc.
+/src/assets/sugimori/*
+/src/assets/animated_sprites/*
+/src/assets/sugimori-resized/*

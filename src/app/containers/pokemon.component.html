@@ -1,0 +1,26 @@
+<div class="pokemon">
+	<h1><strong>#{{ pokemon.id }}</strong> {{ pokemon.name | capitalize}}</h1>
+<!-- 	<div class="types">
+		<span *ngFor="let type of pokemon.types">
+			<span class="badge badge-primary">
+				{{ type.type.name }}
+			</span>
+			&nbsp;
+		</span>
+	</div> -->
+	<p class="lead"></p>
+	<img src="/assets/sugimori-resized/{{pokemon.id}}.png">
+	
+	<h2>Moves</h2>
+
+	<ul>
+		<li *ngFor="let move of pokemon.moves">
+			{{ move.move.name }}
+			<br>
+			<div *ngFor="let method of move.version_group_details">
+				{{ method.move_learn_method.name }}
+				{{ method.level_learned_at }}
+			</div>
+		</li>
+	</ul>
+</div>
