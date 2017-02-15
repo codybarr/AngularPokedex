@@ -1,39 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
 
-import { POKEMON } from '../data/pokemon_names.min';
+import 'rxjs/add/operator/map';
+
+import { POKEMON_DATA } from '../data/pokemon';
 
 
 @Injectable()
 export class PokedexService {
 	private baseUrl: string = 'https://pokeapi.co/api/v2/';
 	private loading: boolean = false;
+	private POKEMON: Array<string> = POKEMON_DATA;
 
 	pokemon_data: any;
 
 	constructor(private _http: Http) {
 		console.log('Pokedex service ready...');
-
-		// this._http.get('../data/pokemon_names.min.json')
-		// 	.map( data => data.json())
-		// 	.map( (pokemon_data) => this.pokemon_data = pokemon_data)
-		// 	// .subscribe(res => this.pokemon_data = res.json());
 	}
 
 	getSinglePokemon(pokemon_name: string) {
-		let index = POKEMON.indexOf(pokemon_name);
+		let index = this.POKEMON.indexOf(pokemon_name);
 
-		if (index != -1) {
-			return { id: index+1, name: pokemon_name};
-		} else {
-			return null;
-		}
-
-
-		// this._http.get(`${this.baseUrl}pokemon/${pokemon_name}/`)
-		// 	.map(res => res.json());
+		return this._http.get(`/data/pokemon/${index+1}.json`)
+			.map(res => res.json());
 	}
 
 	getFlavorText(pokemon_name: string) {
@@ -42,11 +31,11 @@ export class PokedexService {
 
 	}
 
-	getPokemon(offset: number = 0, limit: number = 1000) {
-		return POKEMON.slice(offset, limit).map( (pokemon) => {
+	getPokemon(offset: number = 0, limit: number = 20) {
+		return this.POKEMON.slice(offset, limit).map( (pokemon) => {
 			return {
 				name: pokemon,
-				id: POKEMON.indexOf(pokemon)+1
+				id: this.POKEMON.indexOf(pokemon)+1
 			};
 		});
 
