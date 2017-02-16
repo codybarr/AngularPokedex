@@ -19,7 +19,7 @@ export class PokedexService {
 	getSinglePokemon(pokemon_name: string) {
 		let index = this.POKEMON.indexOf(pokemon_name);
 
-		return this._http.get(`/pokemon/assets/data/pokemon/${index+1}.json`)
+		return this._http.get(`/pokedex/assets/data/pokemon/${index+1}.json`)
 			.map(res => res.json());
 	}
 
