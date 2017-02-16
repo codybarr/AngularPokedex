@@ -10,14 +10,14 @@
     <div class="row">
         <section id="pokemon_name" class="col-md-6">
             <h1>
-		    	<strong>#{{ pokemon.id }}</strong> - {{ pokemon.form | capitalize}}
-		    	<span *ngFor="let type of pokemon.types">
-		    		<span class="badge badge-primary">
-				    	{{ type }}
-			    	</span>
-		    	</span>
-			</h1>
-            <img src="/assets/sugimori-resized/{{ pokemon.id }}.png">
+                <strong>#{{ pokemon.id }}</strong> - {{ pokemon.form | capitalize}}
+                <span *ngFor="let type of pokemon.types">
+                    <span class="badge badge-primary">
+                        {{ type }}
+                    </span>
+                </span>
+            </h1>
+            <img src="/assets/sugimori-resized/{{ pokemon.id }}.png" class="img-fluid" alt="Responsive image">
         </section>
         <section id="pokemon_stats" class="col-md-6">
             <h2>Stats</h2>
@@ -89,7 +89,6 @@
             </div>
         </section>
     </div>
-
     <h2>Moves</h2>
     <h3>Leveling</h3>
     <ul>
@@ -108,6 +107,6 @@
     </ul>
     <!--     <h2>Data</h2>
     <pre>
-		{{ pokemon | json }}
-	</pre> -->
+        {{ pokemon | json }}
+    </pre> -->
 </div>

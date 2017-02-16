@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
-import { POKEMON_DATA } from '../data/pokemon';
+import { POKEMON_DATA } from '../assets/data/pokemon';
 
 
 @Injectable()
@@ -21,7 +21,7 @@ export class PokedexService {
 	getSinglePokemon(pokemon_name: string) {
 		let index = this.POKEMON.indexOf(pokemon_name);
 
-		return this._http.get(`/data/pokemon/${index+1}.json`)
+		return this._http.get(`/assets/data/pokemon/${index+1}.json`)
 			.map(res => res.json());
 	}
 

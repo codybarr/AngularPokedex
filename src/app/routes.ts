@@ -14,4 +14,4 @@ export const routes: ModuleWithProviders = RouterModule.forRoot([
 	{
 		path: '**', redirectTo: ''
 	}
-])
+], { useHash: true })
