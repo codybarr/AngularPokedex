@@ -1,3 +1,8 @@
+<div #loader class="loader" [ngClass]="{hidden: !loading}">
+    <img src="{{prod}}/assets/pokeball.png">
+</div>
+
+
 <div id="pokemon" *ngIf="pokemon">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -17,75 +22,80 @@
                     </span>
                 </span>
             </h1>
-            <img src="/assets/sugimori-resized/{{ pokemon.id }}.png" class="img-fluid" alt="Responsive image">
+            <img src="{{prod}}/assets/sugimori-resized/{{ pokemon.id }}.png" class="img-fluid" alt="Responsive image">
         </section>
         <section id="pokemon_stats" class="col-md-6">
-            <h2>Stats</h2>
-            <div class="row" id="hp">
-                <div class="col-md-4">
-                    HP: {{ pokemon.hp }}
+            <div class="base_stats">
+                <h2>Stats</h2>
+                <div class="row" id="hp">
+                    <div class="col-md-4">
+                        HP: {{ pokemon.hp }}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="progress hp">
+                            <div class="progress-bar bg-success" role="progressbar" [style.width]="(pokemon.hp / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.hp" aria-valuemin="0" aria-valuemax="255">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="progress hp">
-                        <div class="progress-bar bg-success" role="progressbar" [style.width]="(pokemon.hp / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.hp" aria-valuemin="0" aria-valuemax="255">
+                <div class="row" id="attack">
+                    <div class="col-md-4">
+                        Attack: {{ pokemon.attack }}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="progress attack">
+                            <div class="progress-bar bg-danger" role="progressbar" [style.width]="(pokemon.attack / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.attack" aria-valuemin="0" aria-valuemax="255">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="defense">
+                    <div class="col-md-4">
+                        Defense: {{ pokemon.defense }}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="progress defense">
+                            <div class="progress-bar bg-primary" role="progressbar" [style.width]="(pokemon.defense / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.attack" aria-valuemin="0" aria-valuemax="255">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="special-attack">
+                    <div class="col-md-4">
+                        Special Attack: {{ pokemon.special_attack }}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="progress special-attack">
+                            <div class="progress-bar bg-warning" role="progressbar" [style.width]="(pokemon.special_attack / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.special_attack" aria-valuemin="0" aria-valuemax="255">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="special-defense">
+                    <div class="col-md-4">
+                        Special Defense: {{ pokemon.special_defense }}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="progress special-defense">
+                            <div class="progress-bar bg-primary" role="progressbar" [style.width]="(pokemon.special_defense / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.special_defense" aria-valuemin="0" aria-valuemax="255">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="speed">
+                    <div class="col-md-4">
+                        Speed: {{ pokemon.speed }}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="progress speed">
+                            <div class="progress-bar bg-info" role="progressbar" [style.width]="(pokemon.speed / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.speed" aria-valuemin="0" aria-valuemax="255">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row" id="attack">
-                <div class="col-md-4">
-                    Attack: {{ pokemon.attack }}
-                </div>
-                <div class="col-md-8">
-                    <div class="progress attack">
-                        <div class="progress-bar bg-danger" role="progressbar" [style.width]="(pokemon.attack / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.attack" aria-valuemin="0" aria-valuemax="255">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="defense">
-                <div class="col-md-4">
-                    Defense: {{ pokemon.defense }}
-                </div>
-                <div class="col-md-8">
-                    <div class="progress defense">
-                        <div class="progress-bar bg-primary" role="progressbar" [style.width]="(pokemon.defense / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.attack" aria-valuemin="0" aria-valuemax="255">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="special-attack">
-                <div class="col-md-4">
-                    Special Attack: {{ pokemon.special_attack }}
-                </div>
-                <div class="col-md-8">
-                    <div class="progress special-attack">
-                        <div class="progress-bar bg-warning" role="progressbar" [style.width]="(pokemon.special_attack / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.special_attack" aria-valuemin="0" aria-valuemax="255">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="special-defense">
-                <div class="col-md-4">
-                    Special Defense: {{ pokemon.special_defense }}
-                </div>
-                <div class="col-md-8">
-                    <div class="progress special-defense">
-                        <div class="progress-bar bg-primary" role="progressbar" [style.width]="(pokemon.special_defense / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.special_defense" aria-valuemin="0" aria-valuemax="255">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="speed">
-                <div class="col-md-4">
-                    Speed: {{ pokemon.speed }}
-                </div>
-                <div class="col-md-8">
-                    <div class="progress speed">
-                        <div class="progress-bar bg-info" role="progressbar" [style.width]="(pokemon.speed / 255 * 100)+'%'" [attr.aria-valuenow]="pokemon.speed" aria-valuemin="0" aria-valuemax="255">
-                        </div>
-                    </div>
-                </div>
+
+            <div class="info_stats">
             </div>
         </section>
     </div>

@@ -6,12 +6,11 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { routes } from './routes';
 
-import { Main, PokemonComponent } from './containers';
+import { Main, PokemonComponent, TypeChart } from './containers';
 import { Navbar } from './ui';
 
 import { PokedexService } from './pokedex.service';
 import { CapitalizePipe } from './capitalize.pipe';
-import { TypesComponent } from './types/types.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,7 @@ import { TypesComponent } from './types/types.component';
     Main,
     PokemonComponent,
     Navbar,
-    TypesComponent
+    TypeChart
   ],
   imports: [
     BrowserModule,

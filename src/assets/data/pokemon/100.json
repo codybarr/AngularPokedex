@@ -1,1 +1,213 @@
-{"id":100,"ndex":100,"species":"Voltorb","form":"Voltorb","types":["Electric"],"abilities":["Soundproof","Static"],"hidden_ability":"Aftermath","hp":40,"attack":30,"defense":50,"special_attack":55,"special_defense":55,"speed":100,"total":330,"weight":"22.9 lbs.","height":"1'08\"","class":"Ball Pokémon","percent_male":null,"percent_female":null,"egg_groups":["Mineral"],"moves":{"start":["Charge","Tackle"],"egg":[],"tm":[{"tm_number":"TM06","move":"Toxic"},{"tm_number":"TM10","move":"Hidden Power"},{"tm_number":"TM12","move":"Taunt"},{"tm_number":"TM16","move":"Light Screen"},{"tm_number":"TM17","move":"Protect"},{"tm_number":"TM18","move":"Rain Dance"},{"tm_number":"TM21","move":"Frustration"},{"tm_number":"TM24","move":"Thunderbolt"},{"tm_number":"TM25","move":"Thunder"},{"tm_number":"TM27","move":"Return"},{"tm_number":"TM32","move":"Double Team"},{"tm_number":"TM41","move":"Torment"},{"tm_number":"TM42","move":"Facade"},{"tm_number":"TM44","move":"Rest"},{"tm_number":"TM46","move":"Thief"},{"tm_number":"TM48","move":"Round"},{"tm_number":"TM57","move":"Charge Beam"},{"tm_number":"TM64","move":"Explosion"},{"tm_number":"TM72","move":"Volt Switch"},{"tm_number":"TM73","move":"Thunder Wave"},{"tm_number":"TM74","move":"Gyro Ball"},{"tm_number":"TM87","move":"Swagger"},{"tm_number":"TM88","move":"Sleep Talk"},{"tm_number":"TM90","move":"Substitute"},{"tm_number":"TM93","move":"Wild Charge"},{"tm_number":"TM100","move":"Confide"}],"level":[{"level":"4","move":"Sonic Boom"},{"level":"6","move":"Eerie Impulse"},{"level":"9","move":"Spark"},{"level":"11","move":"Rollout"},{"level":"13","move":"Screech"},{"level":"16","move":"Charge Beam"},{"level":"20","move":"Swift"},{"level":"22","move":"Electro Ball"},{"level":"26","move":"Self-Destruct"},{"level":"29","move":"Light Screen"},{"level":"34","move":"Magnet Rise"},{"level":"37","move":"Discharge"},{"level":"41","move":"Explosion"},{"level":"46","move":"Gyro Ball"},{"level":"48","move":"Mirror Coat"}],"tutor":[],"oras":["Signal Beam","Magic Coat","Foul Play","Magnet Rise","Snore","Shock Wave"]}}
+{
+  "abilities": [
+    "Soundproof",
+    "Static"
+  ],
+  "attack": 30,
+  "class": "Ball Pokémon",
+  "defense": 50,
+  "egg_groups": [
+    "Mineral"
+  ],
+  "form": "Voltorb",
+  "height": "1'08\"",
+  "hidden_ability": "Aftermath",
+  "hp": 40,
+  "id": 100,
+  "moves": {
+    "egg": [],
+    "level": [
+      {
+        "level": "4",
+        "move": "Sonic Boom"
+      },
+      {
+        "level": "6",
+        "move": "Eerie Impulse"
+      },
+      {
+        "level": "9",
+        "move": "Spark"
+      },
+      {
+        "level": "11",
+        "move": "Rollout"
+      },
+      {
+        "level": "13",
+        "move": "Screech"
+      },
+      {
+        "level": "16",
+        "move": "Charge Beam"
+      },
+      {
+        "level": "20",
+        "move": "Swift"
+      },
+      {
+        "level": "22",
+        "move": "Electro Ball"
+      },
+      {
+        "level": "26",
+        "move": "Self-Destruct"
+      },
+      {
+        "level": "29",
+        "move": "Light Screen"
+      },
+      {
+        "level": "34",
+        "move": "Magnet Rise"
+      },
+      {
+        "level": "37",
+        "move": "Discharge"
+      },
+      {
+        "level": "41",
+        "move": "Explosion"
+      },
+      {
+        "level": "46",
+        "move": "Gyro Ball"
+      },
+      {
+        "level": "48",
+        "move": "Mirror Coat"
+      }
+    ],
+    "oras": [
+      "Signal Beam",
+      "Magic Coat",
+      "Foul Play",
+      "Magnet Rise",
+      "Snore",
+      "Shock Wave"
+    ],
+    "start": [
+      "Charge",
+      "Tackle"
+    ],
+    "tm": [
+      {
+        "move": "Toxic",
+        "tm_number": "TM06"
+      },
+      {
+        "move": "Hidden Power",
+        "tm_number": "TM10"
+      },
+      {
+        "move": "Taunt",
+        "tm_number": "TM12"
+      },
+      {
+        "move": "Light Screen",
+        "tm_number": "TM16"
+      },
+      {
+        "move": "Protect",
+        "tm_number": "TM17"
+      },
+      {
+        "move": "Rain Dance",
+        "tm_number": "TM18"
+      },
+      {
+        "move": "Frustration",
+        "tm_number": "TM21"
+      },
+      {
+        "move": "Thunderbolt",
+        "tm_number": "TM24"
+      },
+      {
+        "move": "Thunder",
+        "tm_number": "TM25"
+      },
+      {
+        "move": "Return",
+        "tm_number": "TM27"
+      },
+      {
+        "move": "Double Team",
+        "tm_number": "TM32"
+      },
+      {
+        "move": "Torment",
+        "tm_number": "TM41"
+      },
+      {
+        "move": "Facade",
+        "tm_number": "TM42"
+      },
+      {
+        "move": "Rest",
+        "tm_number": "TM44"
+      },
+      {
+        "move": "Thief",
+        "tm_number": "TM46"
+      },
+      {
+        "move": "Round",
+        "tm_number": "TM48"
+      },
+      {
+        "move": "Charge Beam",
+        "tm_number": "TM57"
+      },
+      {
+        "move": "Explosion",
+        "tm_number": "TM64"
+      },
+      {
+        "move": "Volt Switch",
+        "tm_number": "TM72"
+      },
+      {
+        "move": "Thunder Wave",
+        "tm_number": "TM73"
+      },
+      {
+        "move": "Gyro Ball",
+        "tm_number": "TM74"
+      },
+      {
+        "move": "Swagger",
+        "tm_number": "TM87"
+      },
+      {
+        "move": "Sleep Talk",
+        "tm_number": "TM88"
+      },
+      {
+        "move": "Substitute",
+        "tm_number": "TM90"
+      },
+      {
+        "move": "Wild Charge",
+        "tm_number": "TM93"
+      },
+      {
+        "move": "Confide",
+        "tm_number": "TM100"
+      }
+    ],
+    "tutor": []
+  },
+  "ndex": 100,
+  "percent_female": null,
+  "percent_male": null,
+  "special_attack": 55,
+  "special_defense": 55,
+  "species": "Voltorb",
+  "speed": 100,
+  "total": 330,
+  "types": [
+    "Electric"
+  ],
+  "weight": "22.9 lbs."
+}

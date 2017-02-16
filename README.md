@@ -1,5 +1,16 @@
 # Pokedex
 
+Simple Pokedex built with Angular 2. Has Gen 7 data!
+
+## Todo
+
+- Evolutions on Pokemon pages (maybe using animated sprites?)
+- Add type effectiveness to Pokemon pages
+- Add tooltip for move descriptions to pokemon pages
+- Add Pokedex descriptions
+
+# Angular Stuff
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.30.
 
 ## Development server
