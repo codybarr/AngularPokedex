@@ -1,5 +1,7 @@
 <h1>Angular 2 Pokédex</h1>
 
+<h2>Generation 7</h2>
+
 <div class="pokedex row">
 	<div class="col-sm-6 col-md-4 col-lg-3 pokemon-tile" *ngFor="let poke of pokemon">
 	    <div class="card text-center">
@@ -8,7 +10,7 @@
 	        </div>
 	        <div class="card-block">
 	        	<a [routerLink]="['pokemon', poke.name]">
-                    <img class="pokemon-sprite {{poke.name}}" src="/assets/blank.gif">
+                    <img class="pokemon-sprite {{ poke.name | hyphenate }}" src="/assets/blank.gif">
                 </a>
 	        </div>
 	    </div>

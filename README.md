@@ -4,7 +4,10 @@ Simple Pokedex built with Angular 2. Has Gen 7 data!
 
 ## Todo
 
+/ Badge colors for pokemon types (use colors from https://i.imgur.com/8AKzEBt.jpg)
 - Evolutions on Pokemon pages (maybe using animated sprites?)
+- Bad URLs/searches redirect to homepage and generate toast warning!
+- Typeahead/Autocomplete in navigation search bar
 - Add type effectiveness to Pokemon pages
 - Add tooltip for move descriptions to pokemon pages
 - Add Pokedex descriptions

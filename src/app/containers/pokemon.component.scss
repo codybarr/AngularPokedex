@@ -10,10 +10,10 @@
 }
 
 .loader img {
-	z-index: 9998;
-	position: fixed;
-	left: 50%;
-	top: 50%;
+    z-index: 9998;
+    position: fixed;
+    left: 50%;
+    top: 50%;
     -webkit-transition: opacity .2s;
     transition: opacity .2s;
     -webkit-animation-duration: .8s;
@@ -48,4 +48,77 @@
 
 .loader.hidden {
     display: none;
+}
+
+// Type Colors for badges
+.badge-normal {
+    background-color: rgb(168, 167, 125);
+}
+
+.badge-fire {
+    background-color: rgb(244, 126, 64);
+}
+
+.badge-water {
+    background-color: rgb(104, 145, 234);
+}
+
+.badge-grass {
+    background-color: rgb(111, 199, 97);
+}
+
+.badge-electric {
+    background-color: rgb(249, 207, 82);
+}
+
+.badge-ice {
+    background-color: rgb(147, 216, 215);
+}
+
+.badge-fighting {
+    background-color: rgb(196, 46, 45);
+}
+
+.badge-poison {
+    background-color: rgb(164, 65, 156);
+}
+
+.badge-ground {
+    background-color: rgb(225, 191, 117);
+}
+
+.badge-flying { 
+    background-color: rgb(170, 145, 234);
+}
+
+.badge-psychic {
+    background-color: rgb(254, 87, 134);
+}
+
+.badge-bug {
+    background-color: rgb(166, 183, 67);
+}
+
+.badge-rock {
+    background-color: rgb(183, 159, 74);
+}
+
+.badge-ghost {
+    background-color: rgb(114, 88, 148);
+}
+
+.badge-dragon {
+    background-color: rgb(118, 62, 240);
+}
+
+.badge-dark {
+    background-color: rgb(112, 88, 74);
+}
+
+.badge-steel {
+    background-color: rgb(184, 184, 206);
+}
+
+.badge-fairy {
+    background-color: rgb(250, 201, 225);
 }

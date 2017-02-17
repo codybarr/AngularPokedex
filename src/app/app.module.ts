@@ -11,11 +11,13 @@ import { Navbar } from './ui';
 
 import { PokedexService } from './pokedex.service';
 import { CapitalizePipe } from './capitalize.pipe';
+import { HyphenatePipe } from './hyphenate.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CapitalizePipe,
+    HyphenatePipe,
     Main,
     PokemonComponent,
     Navbar,

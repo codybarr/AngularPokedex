@@ -7,6 +7,10 @@ import { environment } from '../environments/environment';
 import { POKEMON_DATA } from '../assets/data/pokemon';
 
 
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+
+
 @Injectable()
 export class PokedexService {
 	private loading: boolean = false;
@@ -26,8 +30,11 @@ export class PokedexService {
 			.map(res => res.json());
 	}
 
-	getPokemon(offset: number = 0, limit: number = 20) {
-		return this.POKEMON.slice(offset, limit).map( (pokemon) => {
+	getPokemon(offset: number = 1, limit: number = 20) {
+		console.log('Offset', offset);
+		console.log('Limit', limit);
+
+		return this.POKEMON.slice(offset-1, limit).map( (pokemon) => {
 			return {
 				name: pokemon,
 				id: this.POKEMON.indexOf(pokemon)+1

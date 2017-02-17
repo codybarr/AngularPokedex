@@ -17,7 +17,7 @@
             <h1>
                 <strong>#{{ pokemon.id }}</strong> - {{ pokemon.form | capitalize}}
                 <span *ngFor="let type of pokemon.types">
-                    <span class="badge badge-primary">
+                    <span class="badge badge-{{ type | lowercase }}">
                         {{ type }}
                     </span>
                 </span>
@@ -96,6 +96,8 @@
             </div>
 
             <div class="info_stats">
+                <h2>Info</h2>
+                <p></p>
             </div>
         </section>
     </div>
