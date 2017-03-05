@@ -171,26 +171,27 @@
                     <tr *ngFor="let start_move of pokemon.moves.start">
                         <td class="level">Start</td>
                         <td>
-                            <a popover="{{ moves[start_move].description }}">
+                            <a href="#" ngbTooltip="{{ moves[start_move].description }}">
                                 {{ start_move }}
                             </a>
                         </td>
-                        <td><span class="badge type-{{ moves[start_move].type | lowercase }} type-chicklet">{{ moves[start_move].type }}</span></td>
-                        <td>{{ moves[start_move].category }}</td>
-                        <td>{{ moves[start_move].power }}</td>
-                        <td>{{ moves[start_move].accuracy }}</td>
+                        <td class="type"><span class="badge type-{{ moves[start_move].type | lowercase }} type-chicklet">{{ moves[start_move].type }}</span></td>
+                        <td class="category"><img src="{{prod}}/assets/{{ moves[start_move].category | lowercase }}.png"></td>
+                        <td class="power">{{ moves[start_move].power }}</td>
+                        <td class="accuracy">{{ moves[start_move].accuracy }}</td>
                     </tr>
                     <tr *ngFor="let level_move of pokemon.moves.level">
                         <td class="level">{{ level_move.level }}</td>
                         <td>
-                            <a popover="{{ moves[level_move.move].description }}">
+                            <a href="#" ngbTooltip="{{ moves[level_move.move].description }}"
+                               >
                                 {{ level_move.move }}
                             </a>
                         </td>
-                        <td><span class="badge type-{{ moves[level_move.move].type | lowercase }} type-chicklet">{{ moves[level_move.move].type }}</span></td>
-                        <td>{{ moves[level_move.move].category }}</td>
-                        <td>{{ moves[level_move.move].power }}</td>
-                        <td>{{ moves[level_move.move].accuracy }}</td>
+                        <td class="type"><span class="badge type-{{ moves[level_move.move].type | lowercase }} type-chicklet">{{ moves[level_move.move].type }}</span></td>
+                        <td class="category"><img src="{{prod}}/assets/{{ moves[level_move.move].category | lowercase }}.png"></td>
+                        <td class="power">{{ moves[level_move.move].power }}</td>
+                        <td class="accuracy">{{ moves[level_move.move].accuracy }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -210,15 +211,15 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let tm_move of pokemon.moves.tm">
-                        <td>{{ tm_move.tm_number }}</td>
+                        <td class="tm">{{ tm_move.tm_number }}</td>
                         <td>
-                            <a popover="{{ moves[tm_move.move].description }}">
+                            <a href="#" ngbTooltip="{{ moves[tm_move.move].description }}">
                                 {{ tm_move.move }}
                             </a>                        </td>
-                        <td><span class="badge type-{{ moves[tm_move.move].type | lowercase }} type-chicklet">{{ moves[tm_move.move].type }}</span></td>
-                        <td>{{ moves[tm_move.move].category }}</td>
-                        <td>{{ moves[tm_move.move].power }}</td>
-                        <td>{{ moves[tm_move.move].accuracy }}</td>
+                        <td class="type"><span class="badge type-{{ moves[tm_move.move].type | lowercase }} type-chicklet">{{ moves[tm_move.move].type }}</span></td>
+                        <td class="category"><img src="{{prod}}/assets/{{ moves[tm_move.move].category | lowercase }}.png"></td>
+                        <td class="power">{{ moves[tm_move.move].power }}</td>
+                        <td class="accuracy">{{ moves[tm_move.move].accuracy }}</td>
                     </tr>
                 </tbody>
             </table>

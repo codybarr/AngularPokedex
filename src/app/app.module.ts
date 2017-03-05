@@ -17,7 +17,7 @@ import { CapitalizePipe, HyphenatePipe, FractionPipe } from './pipes';
 
 import { PokedexService } from './pokedex.service';
 
-import { PopoverModule } from 'ng2-bootstrap/popover';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { PopoverModule } from 'ng2-bootstrap/popover';
     CommonModule,
     FormsModule,
     HttpModule,
-    PopoverModule.forRoot(),
+    NgbModule.forRoot(),
     routes
   ],
   providers: [PokedexService],

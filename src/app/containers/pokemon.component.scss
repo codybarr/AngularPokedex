@@ -61,8 +61,11 @@
     }
 
     table {
-        td.level {
+        td.level, td.power, td.accuracy, td.tm {
             text-align: right;
+        }
+        td.category, td.type {
+            text-align: center;
         }
     }
 }
