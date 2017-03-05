@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PokedexService } from '../pokedex.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { PokedexService } from '../pokedex.service';
 	templateUrl: 'type-effectiveness.component.html',
 	styleUrls: ['type-effectiveness.component.scss']
 })
-export class TypeEffectivenessComponent implements OnInit {
+export class TypeEffectivenessComponent {
 	@Input() types: string[];
 	@Input() pokemon: string;
 
@@ -17,7 +17,7 @@ export class TypeEffectivenessComponent implements OnInit {
 
 	constructor(private pokedexService: PokedexService) {}
 
-	ngOnInit() {
+	ngOnChanges() {
 		this.pokedexService.getTypeChart().subscribe( data => {
 			let type_effectiveness;
 			if (this.types.length == 1) {
