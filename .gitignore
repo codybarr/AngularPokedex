@@ -40,6 +40,3 @@ testem.log
 Thumbs.db
 
 #Large Files / Sprites/etc.
-
-# vscode files
-.vscode
