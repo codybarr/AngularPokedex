@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { PokedexService } from './pokedex.service';
 
 import { environment } from '../environments/environment';

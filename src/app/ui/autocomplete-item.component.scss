@@ -1,0 +1,17 @@
+.autocomplete-item {
+    a {
+        &:hover {
+            background-color: rgba(92, 184, 92, .95);
+            color: white;
+        }
+        img {
+            zoom: 0.5;
+            -moz-transform: scale(0.5);
+            -moz-transform-origin: 0 0;
+
+            margin-right: 30px;
+        }
+
+        border-bottom: 1px solid rgba(0,0,0,.05)
+    }
+}

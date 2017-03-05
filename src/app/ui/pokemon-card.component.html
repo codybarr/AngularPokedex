@@ -1,0 +1,10 @@
+<div class="card text-center">
+    <div class="card-header">
+        <strong>#{{ pokemon.id }}</strong> - {{ pokemon.name | capitalize }}
+    </div>
+    <div class="card-block">
+        <a [routerLink]="['pokemon', pokemon.name | hyphenate]">
+            <img class="pokemon-sprite {{ pokemon.name | hyphenate }}" src="{{prod}}/assets/blank.gif">
+        </a>
+    </div>
+</div>

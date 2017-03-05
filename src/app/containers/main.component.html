@@ -1,18 +1,26 @@
 <h1>Angular 2 Pokédex</h1>
 
-<h2>Generation 7</h2>
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-outline-primary" (click)="setGen('I')">
+    <input type="radio" name="options" id="option1" autocomplete="off">Generation I
+  </label>
+  <label class="btn btn-outline-primary active" (click)="setGen('VII')">
+    <input type="radio" name="options" id="option2" autocomplete="off">Generation VII
+  </label>
+</div>
+
+<h2>Generation {{ gen }}</h2>
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="alert-heading">Sorry!</h4>
+  <p>That pokemon doesn't seem to exist :(</p>
+</div>
 
 <div class="pokedex row">
 	<div class="col-sm-6 col-md-4 col-lg-3 pokemon-tile" *ngFor="let poke of pokemon">
-	    <div class="card text-center">
-	        <div class="card-header">
-	            <strong>#{{ poke.id }}</strong> - {{ poke.name | capitalize }}
-	        </div>
-	        <div class="card-block">
-	        	<a [routerLink]="['pokemon', poke.name]">
-                    <img class="pokemon-sprite {{ poke.name | hyphenate }}" src="/assets/blank.gif">
-                </a>
-	        </div>
-	    </div>
+		<pokemon-card [pokemon]="poke"></pokemon-card>
     </div>
 </div>

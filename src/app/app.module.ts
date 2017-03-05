@@ -6,28 +6,39 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { routes } from './routes';
 
-import { Main, PokemonComponent, TypeChart } from './containers';
-import { Navbar } from './ui';
+
+import { Main, PokemonComponent } from './containers';
+import { Navbar, 
+         AutocompleteItemComponent, 
+         PokemonCardComponent, 
+         TypeEffectivenessComponent,
+         FooterComponent } from './ui';
+import { CapitalizePipe, HyphenatePipe, FractionPipe } from './pipes';
 
 import { PokedexService } from './pokedex.service';
-import { CapitalizePipe } from './capitalize.pipe';
-import { HyphenatePipe } from './hyphenate.pipe';
+
+import { PopoverModule } from 'ng2-bootstrap/popover';
 
 @NgModule({
   declarations: [
     AppComponent,
     CapitalizePipe,
     HyphenatePipe,
+    FractionPipe,
     Main,
+    PokemonCardComponent,
     PokemonComponent,
     Navbar,
-    TypeChart
+    AutocompleteItemComponent,
+    TypeEffectivenessComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     HttpModule,
+    PopoverModule.forRoot(),
     routes
   ],
   providers: [PokedexService],

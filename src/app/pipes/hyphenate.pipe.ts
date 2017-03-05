@@ -9,7 +9,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class HyphenatePipe implements PipeTransform {
   transform(value: string): string {
   	if (value && value != '') {
-  		return value.replace(' ', '-').replace(/\:/, '');	
+  		// strips periods (.), apostrophes ('), and colons (:)
+  		// replaces spaces ( ) with hyphens
+  		return value.replace(/[\.\'\:]+/gi, '').replace(' ', '-');
   	}
   	else {
   		return '';

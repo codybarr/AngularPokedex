@@ -1,0 +1,6 @@
+<div class="autocomplete-item">
+	<a class="nav-link" [routerLink]="['pokemon', pokemon]" (click)="clearQuery()">
+		<img class="pokemon-sprite {{ pokemon | hyphenate }}" src="/assets/blank.gif">
+		{{ pokemon | capitalize }}
+	</a>
+</div>

@@ -5,13 +5,28 @@
     <a class="navbar-brand" href="#">{{ title }}</a>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+<!--             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['types']">Type Chart</a>
-            </li>
+            </li> -->
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" [(ngModel)]="query" name="query" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchPokemon()">Search</button>
+        <form class="form-inline my-2 my-lg-0 col-lg-5">
+            <input 
+                class="form-control mr-sm-4" 
+                type="text"
+                name="query" 
+                placeholder="Pokemon Search" 
+                [(ngModel)]="query"
+                (keyup)="searchPokemon($event)"
+                (blur)="clearQuery()">
+
+            <div class="autocomplete" *ngIf="query">
+                    <autocomplete-item 
+                        *ngFor="let match of matches" 
+                        [pokemon]="match"
+                        (onItemClick)="onItemClick($event)">
+                        
+                    </autocomplete-item>
+            </div>
         </form>
     </div>
 </nav>
