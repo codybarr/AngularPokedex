@@ -52,6 +52,17 @@
 // Styles
 #pokemon {
 
+    nav.pager {
+        overflow: hidden;
+        
+        .prev {
+            float: left;
+        }
+        .next {
+            float: right;
+        }
+    }
+
     #pokemon_name {
         text-align: center;
     }

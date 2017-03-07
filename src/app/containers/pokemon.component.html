@@ -10,6 +10,10 @@
             {{ pokemon.form | capitalize }}
         </li>
     </ol>
+    <nav class="pager">
+        <a *ngIf="pokemon.id != 1" class="prev" [routerLink]="['/pokemon', POKEMON[pokemon.id - 2]]">&laquo; {{ POKEMON[pokemon.id - 2] | capitalize }}</a>
+        <a *ngIf="pokemon.id != 802" class="next" [routerLink]="['/pokemon', POKEMON[pokemon.id]]">{{ POKEMON[pokemon.id] | capitalize }} &raquo; </a>
+    </nav>
     <div class="row">
         <section id="pokemon_name" class="col-md-6">
             <h1>
@@ -104,9 +108,22 @@
                             <th>Abilities</th>
                             <td>
                                 <div *ngFor="let ability of pokemon.abilities">
-                                    {{ ability }}
+                                    <span class="btn-link" 
+                                          ngbPopover="{{ abilities[ability].description }}"
+                                          triggers="hover"
+                                          >
+                                        {{ ability }}
+                                    </span>
                                 </div>
-                                <small *ngIf="pokemon.hidden_ability"> {{ pokemon.hidden_ability }} (hidden ability)</small>
+                                <small *ngIf="pokemon.hidden_ability">
+                                    <span class="btn-link"
+                                          ngbPopover="{{ abilities[pokemon.hidden_ability].description }}"
+                                          triggers="hover">
+
+                                        {{ pokemon.hidden_ability }}
+                                    </span>
+                                    (hidden ability)
+                                </small>
                             </td>
                         </tr>
 
@@ -154,7 +171,7 @@
 
     <h2>Moves</h2>
     <div class="row moves">
-        <div class="col-lg-6 leveling">
+        <div class="col-lg-6 leveling egg">
             <h3>Leveling</h3>
             <table class="table table-sm table-striped table-bordered">
                 <thead class="thead-inverse">
@@ -171,9 +188,13 @@
                     <tr *ngFor="let start_move of pokemon.moves.start">
                         <td class="level">Start</td>
                         <td>
-                            <a href="#" ngbTooltip="{{ moves[start_move].description }}">
+                            <span class="btn-link"
+                                  ngbPopover="{{ moves[start_move].description }}"
+                                  popoverTitle="{{ start_move }}"
+                                  triggers="hover"
+                                  placement="right">
                                 {{ start_move }}
-                            </a>
+                            </span>
                         </td>
                         <td class="type"><span class="badge type-{{ moves[start_move].type | lowercase }} type-chicklet">{{ moves[start_move].type }}</span></td>
                         <td class="category"><img src="{{prod}}/assets/{{ moves[start_move].category | lowercase }}.png"></td>
@@ -183,15 +204,47 @@
                     <tr *ngFor="let level_move of pokemon.moves.level">
                         <td class="level">{{ level_move.level }}</td>
                         <td>
-                            <a href="#" ngbTooltip="{{ moves[level_move.move].description }}"
-                               >
+                            <span class="btn-link"
+                                  ngbPopover="{{ moves[level_move.move].description }}"
+                                  popoverTitle="{{ level_move.move }}"
+                                  triggers="hover"
+                                  placement="right">
                                 {{ level_move.move }}
-                            </a>
+                            </span>
                         </td>
                         <td class="type"><span class="badge type-{{ moves[level_move.move].type | lowercase }} type-chicklet">{{ moves[level_move.move].type }}</span></td>
                         <td class="category"><img src="{{prod}}/assets/{{ moves[level_move.move].category | lowercase }}.png"></td>
                         <td class="power">{{ moves[level_move.move].power }}</td>
                         <td class="accuracy">{{ moves[level_move.move].accuracy }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Egg Moves</h3>
+            <table class="table table-sm table-striped table-bordered">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Move</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Power</th>
+                        <th>Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let egg_move of pokemon.moves.egg">
+                        <td>    
+                            <span class="btn-link"
+                                  ngbPopover="{{ moves[egg_move].description }}"
+                                  popoverTitle="{{ egg_move }}"
+                                  triggers="hover"
+                                  placement="right">
+                                {{ egg_move }}
+                            </span>                        
+                        </td>
+                        <td class="type"><span class="badge type-{{ moves[egg_move].type | lowercase }} type-chicklet">{{ moves[egg_move].type }}</span></td>
+                        <td class="category"><img src="{{prod}}/assets/{{ moves[egg_move].category | lowercase }}.png"></td>
+                        <td class="power">{{ moves[egg_move].power }}</td>
+                        <td class="accuracy">{{ moves[egg_move].accuracy }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -212,10 +265,15 @@
                 <tbody>
                     <tr *ngFor="let tm_move of pokemon.moves.tm">
                         <td class="tm">{{ tm_move.tm_number }}</td>
-                        <td>
-                            <a href="#" ngbTooltip="{{ moves[tm_move.move].description }}">
+                        <td>    
+                            <span class="btn-link"
+                                  ngbPopover="{{ moves[tm_move.move].description }}"
+                                  popoverTitle="{{ tm_move.move }}"
+                                  triggers="hover"
+                                  placement="right">
                                 {{ tm_move.move }}
-                            </a>                        </td>
+                            </span>                        
+                        </td>
                         <td class="type"><span class="badge type-{{ moves[tm_move.move].type | lowercase }} type-chicklet">{{ moves[tm_move.move].type }}</span></td>
                         <td class="category"><img src="{{prod}}/assets/{{ moves[tm_move.move].category | lowercase }}.png"></td>
                         <td class="power">{{ moves[tm_move.move].power }}</td>

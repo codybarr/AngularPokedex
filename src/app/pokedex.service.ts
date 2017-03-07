@@ -62,6 +62,12 @@ export class PokedexService {
 			.map(res => res.json());
 	}
 
+	// Return ability list
+	getAbilities() {
+		return this._http.get(`${this.prod}/assets/data/abilities.json`)
+			.map(res => res.json());
+	}
+
 	// ~ Fuzzy search for navbar autocomplete
 
 	getPokemonByName(query: string) {

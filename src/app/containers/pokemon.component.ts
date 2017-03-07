@@ -5,6 +5,8 @@ import { environment } from '../../environments/environment';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+import { POKEMON_DATA } from '../../assets/data/pokemon';
+
 @Component({
 	selector: 'pokemon',
 	templateUrl: 'pokemon.component.html',
@@ -13,6 +15,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class PokemonComponent implements OnInit, OnDestroy {
 	prod: string = environment.production ? '/pokedex' : '';
 
+	POKEMON: Array<string> = POKEMON_DATA;
+
 	params;
 	service: any = {};
 
@@ -20,6 +24,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
 
 	pokemon: any;
 	moves: any;
+	abilities: any;
 	pokemon_name: string;
 
 	constructor(
@@ -52,6 +57,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
 			);
 
 			this.service.moves = this.pokedexService.getMoves().subscribe( data => this.moves = data );
+			this.service.moves = this.pokedexService.getAbilities().subscribe( data => this.abilities = data );
 		});
 	}
 
