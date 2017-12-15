@@ -1,5 +1,5 @@
 <div class="autocomplete-item">
-	<a class="nav-link" [routerLink]="['pokemon', pokemon]" (click)="clearQuery()">
+	<a class="nav-link" [routerLink]="['pokemon', pokemon | hyphenate]" (click)="clearQuery()">
 		<img class="pokemon-sprite {{ pokemon | hyphenate }}" src="/assets/blank.gif">
 		{{ pokemon | capitalize }}
 	</a>

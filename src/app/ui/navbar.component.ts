@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 // import { FormControl } from '@angular/forms';
 // import 'rxjs/add/operator/debounceTime';
@@ -12,7 +12,7 @@ import { PokedexService } from '../pokedex.service';
 	templateUrl: 'navbar.component.html',
 	styleUrls: ['navbar.component.scss']
 })
-export class Navbar implements OnInit {
+export class Navbar {
 	title: string = 'Pokedex';
 	query: string = '';
 	

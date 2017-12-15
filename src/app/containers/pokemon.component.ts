@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { PokedexService } from '../pokedex.service';
 
 import { environment } from '../../environments/environment';
@@ -12,7 +12,7 @@ import { POKEMON_DATA } from '../../assets/data/pokemon';
 	templateUrl: 'pokemon.component.html',
 	styleUrls: ['pokemon.component.scss']
 })
-export class PokemonComponent implements OnInit, OnDestroy {
+export class PokemonComponent {
 	prod: string = environment.production ? '/pokedex' : '';
 
 	POKEMON: Array<string> = POKEMON_DATA;
@@ -38,15 +38,27 @@ export class PokemonComponent implements OnInit, OnDestroy {
 			this.loading = true;
 			this.pokemon_name = params['name'].toLowerCase();
 			this.service.pokemon = this.pokedexService.getSinglePokemon(params['name'].toLowerCase()).subscribe(
-				(data) => { 
-					// this.loading = false; 
-					// this.pokemon = data; 
+				(pokemonData) => { 
 
-					// To simulate latency
-					setTimeout(() => {
-						this.loading = false;
-						this.pokemon = data;
-					}, 500);
+					this.service.moves = this.pokedexService.getMoves().subscribe( 
+						(moveData) => {
+							this.service.abilities = this.pokedexService.getAbilities().subscribe( 
+								(abilityData) => {
+									this.abilities = abilityData;
+									this.moves = moveData;
+
+									this.loading = false; 
+									this.pokemon = pokemonData; 
+
+									// To simulate latency
+									// setTimeout(() => {
+									// 	this.loading = false;
+									// 	this.pokemon = data;
+									// }, 500);
+								}
+							);
+						}
+					);
 				},
 				(err) => { 
 					console.log('Error occurred'); 
@@ -55,15 +67,13 @@ export class PokemonComponent implements OnInit, OnDestroy {
 					this.router.navigate(['']);
 				}
 			);
-
-			this.service.moves = this.pokedexService.getMoves().subscribe( data => this.moves = data );
-			this.service.moves = this.pokedexService.getAbilities().subscribe( data => this.abilities = data );
 		});
 	}
 
 	ngOnDestroy() {
 		this.service.pokemon.unsubscribe();
 		this.service.moves.unsubscribe();
+		this.service.abilities.unsubscribe();
 
 		this.params.unsubscribe();
 	}
