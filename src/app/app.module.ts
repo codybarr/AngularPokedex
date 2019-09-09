@@ -1,23 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { HttpModule } from '@angular/http';
-import { routes } from './routes';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { AppComponent } from "./app.component";
+import { HttpClientModule } from "@angular/common/http";
 
+import { routes } from "./routes";
 
-import { Main, PokemonComponent } from './containers';
-import { Navbar, 
-         AutocompleteItemComponent, 
-         PokemonCardComponent, 
-         TypeEffectivenessComponent,
-         FooterComponent } from './ui';
-import { CapitalizePipe, HyphenatePipe, FractionPipe } from './pipes';
+import { Main, PokemonComponent } from "./containers";
+import {
+  Navbar,
+  AutocompleteItemComponent,
+  PokemonCardComponent,
+  TypeEffectivenessComponent,
+  FooterComponent
+} from "./ui";
+import { CapitalizePipe, HyphenatePipe, FractionPipe } from "./pipes";
 
-import { PokedexService } from './pokedex.service';
+import { PokedexService } from "./pokedex.service";
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -31,13 +33,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     Navbar,
     AutocompleteItemComponent,
     TypeEffectivenessComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     routes
   ],
@@ -45,6 +47,4 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule {}
